@@ -6,8 +6,9 @@ The package scaffold is ready. Components will be added over time.
 
 ## Requirements
 
-- iOS 16.0+ or macOS 13.0+
-- Swift 6.0+ (Xcode 16.0+)
+- iOS 15.0+ or macOS 26.0+
+- Swift 6.0+
+- Xcode 16.0+ for iOS; Xcode 26.0+ for macOS
 
 ## Installation
 
