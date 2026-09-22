@@ -4,6 +4,9 @@ options:
   deploymentTarget:
     iOS: "15.0"
 packages:
+  EasyAnchor:
+    url: https://github.com/PhanithNY/EasyAnchor.git
+    revision: fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc
   SKComponentKit:
     path: ../..
 settings:
@@ -23,6 +26,7 @@ targets:
       - Demos
     dependencies:
       - package: SKComponentKit
+      - package: EasyAnchor
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.phanithny.SKComponentKit.Example
@@ -32,6 +36,7 @@ targets:
       path: App/Info.plist
       properties:
         CFBundleDisplayName: SK Components
+        NSCameraUsageDescription: Scan QR codes and barcodes in the component example.
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
@@ -48,6 +53,19 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
+  SKComponentKitExampleTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests
+    dependencies:
+      - target: SKComponentKitExample
+      - package: SKComponentKit
+      - package: EasyAnchor
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.phanithny.SKComponentKit.Example.Tests
+        GENERATE_INFOPLIST_FILE: YES
   SKComponentKitExampleUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -69,4 +87,5 @@ schemes:
     test:
       config: Debug
       targets:
+        - SKComponentKitExampleTests
         - SKComponentKitExampleUITests

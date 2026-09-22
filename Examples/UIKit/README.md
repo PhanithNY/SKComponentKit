@@ -58,9 +58,9 @@ Dynamic Type support still depends on the component using scalable fonts and fle
 
 ## Manual checks for each component
 
-Run the two UI smoke tests with **Command-U** in Xcode. They verify catalog search,
-navigation, button interaction, and selecting appearance and accessibility text-size options.
-CI builds the example; these interactive tests currently run locally.
+Run tests with **Command-U** in Xcode. Component tests load all 12 demos at phone and tablet
+sizes and check layout and lifecycle behavior. UI tests verify catalog search, navigation,
+button callbacks, dialogue dismissal, and preview controls. GitHub Actions runs these checks as well.
 
 - Interact with the demo and verify its state changes.
 - Check light and dark appearances.
@@ -69,5 +69,6 @@ CI builds the example; these interactive tests currently run locally.
 - Check VoiceOver and the oldest supported iOS version when that runtime or device is available.
 
 The UIKit playground is example-only code, not a public SKComponentKit component.
-The package component list is intentionally empty until the first component is implemented.
+The component catalog contains the imported PHComponents views and controllers. Use the QR
+Scanner demo on a physical device for camera testing; Simulator displays the frame only.
 AppKit components need a native macOS example app; this project does not use Mac Catalyst.

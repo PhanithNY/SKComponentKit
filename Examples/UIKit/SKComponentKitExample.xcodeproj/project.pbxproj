@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64EBFEA961D50F4CEB6996A6 /* ImportedComponentDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */; };
+		6F2759F5DEA3FF30629E3EB4 /* ImportedComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */; };
 		7068667FEF6B362688049186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BBCB3E3B70D87E0435237 /* AppDelegate.swift */; };
 		87C57A4D284060FAC3F356C7 /* SKComponentKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE664EBD7FD74E5FFA6C88A6 /* SKComponentKit */; };
+		907DE388723D9EB226CE9820 /* EasyAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = FC8D2E3287BB735F2BDEBF2F /* EasyAnchor */; };
 		C044CA99EFF7FF55A11CC04F /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E081A83AF9498F92017B9 /* PlaygroundViewController.swift */; };
 		C0F7539995AEC93D061C3497 /* DemoHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B9302967A5E0B4FB72B4A /* DemoHostViewController.swift */; };
 		DB28433363BEDD2466FD4C7E /* ComponentDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A386C0B7891E992A5A23A /* ComponentDemo.swift */; };
+		DDF8E3BCD6BB23D78111BA19 /* EasyAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = B530386C2CA438BA88537016 /* EasyAnchor */; };
+		E60E5A9EB600EB3B3BD12625 /* SKComponentKit in Frameworks */ = {isa = PBXBuildFile; productRef = E04ADA8BF2C491A8885523F8 /* SKComponentKit */; };
 		F72A9FDA7B9D234E8ED84FCE /* ComponentCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11EECBCCDB88868345B5534 /* ComponentCatalogViewController.swift */; };
 		F85128E4C3AE085BFD3BC6AC /* CatalogSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D432DE7BAE535D48B530B /* CatalogSmokeTests.swift */; };
 		FF9B5019DF27CE835FE44870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE6B594B7E429120890173 /* SceneDelegate.swift */; };
@@ -25,12 +30,22 @@
 			remoteGlobalIDString = E96670B6E57410470799A7FC;
 			remoteInfo = SKComponentKitExample;
 		};
+		C0144CD16672C129E65C78C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3E1A31F2E18955BB67D9112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E96670B6E57410470799A7FC;
+			remoteInfo = SKComponentKitExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedComponentDemos.swift; sourceTree = "<group>"; };
 		1FB837FA1E29BB5E8FF65531 /* SKComponentKitExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SKComponentKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedComponentTests.swift; sourceTree = "<group>"; };
 		27272A0A1FBC5D32662164AF /* SKComponentKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SKComponentKit; path = ../..; sourceTree = SOURCE_ROOT; };
 		7D0D432DE7BAE535D48B530B /* CatalogSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSmokeTests.swift; sourceTree = "<group>"; };
+		89BFEBD3D73B1F6EBFAC65D2 /* SKComponentKitExampleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SKComponentKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		937B9302967A5E0B4FB72B4A /* DemoHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHostViewController.swift; sourceTree = "<group>"; };
 		A8FE6B594B7E429120890173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6C76E3EFB9B8A46DB9EF9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +62,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C57A4D284060FAC3F356C7 /* SKComponentKit in Frameworks */,
+				DDF8E3BCD6BB23D78111BA19 /* EasyAnchor in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A5001478DA07403FB421DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E60E5A9EB600EB3B3BD12625 /* SKComponentKit in Frameworks */,
+				907DE388723D9EB226CE9820 /* EasyAnchor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +81,7 @@
 		05E088674E71F59AAF10C261 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */,
 				EA6E081A83AF9498F92017B9 /* PlaygroundViewController.swift */,
 			);
 			path = Demos;
@@ -86,6 +112,7 @@
 				659E9DC3D46151811094D9A1 /* Catalog */,
 				05E088674E71F59AAF10C261 /* Demos */,
 				7AD9E50255D650EF182C0A88 /* Packages */,
+				FC033380F1A743D647AA7F56 /* Tests */,
 				08A4D36AC1AF50EAEB2E91CE /* UITests */,
 				8F3E1BFE75E1E9A9AFD8311D /* Products */,
 			);
@@ -113,9 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				1FB837FA1E29BB5E8FF65531 /* SKComponentKitExample.app */,
+				89BFEBD3D73B1F6EBFAC65D2 /* SKComponentKitExampleTests.xctest */,
 				D8CF9A99ED08393EBE2826E7 /* SKComponentKitExampleUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FC033380F1A743D647AA7F56 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +175,27 @@
 			productReference = D8CF9A99ED08393EBE2826E7 /* SKComponentKitExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D029DF78C702C8425A9A3E7A /* SKComponentKitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E923A0B85DAEB4B850F8E07 /* Build configuration list for PBXNativeTarget "SKComponentKitExampleTests" */;
+			buildPhases = (
+				D0563FB70D04E2D082B3E50C /* Sources */,
+				64A5001478DA07403FB421DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				235384C7D8B81974FFAEC116 /* PBXTargetDependency */,
+			);
+			name = SKComponentKitExampleTests;
+			packageProductDependencies = (
+				E04ADA8BF2C491A8885523F8 /* SKComponentKit */,
+				FC8D2E3287BB735F2BDEBF2F /* EasyAnchor */,
+			);
+			productName = SKComponentKitExampleTests;
+			productReference = 89BFEBD3D73B1F6EBFAC65D2 /* SKComponentKitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E96670B6E57410470799A7FC /* SKComponentKitExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A723A9FAEC316ED2F8EE43BF /* Build configuration list for PBXNativeTarget "SKComponentKitExample" */;
@@ -153,6 +210,7 @@
 			name = SKComponentKitExample;
 			packageProductDependencies = (
 				DE664EBD7FD74E5FFA6C88A6 /* SKComponentKit */,
+				B530386C2CA438BA88537016 /* EasyAnchor */,
 			);
 			productName = SKComponentKitExample;
 			productReference = 1FB837FA1E29BB5E8FF65531 /* SKComponentKitExample.app */;
@@ -171,6 +229,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = E96670B6E57410470799A7FC;
 					};
+					D029DF78C702C8425A9A3E7A = {
+						ProvisioningStyle = Automatic;
+					};
 					E96670B6E57410470799A7FC = {
 						ProvisioningStyle = Automatic;
 					};
@@ -187,6 +248,7 @@
 			mainGroup = 475BC3BE9C2D85B7E19FE5E0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				03B067396447AD1025C77F86 /* XCRemoteSwiftPackageReference "EasyAnchor" */,
 				5EB20A47A2252DBCB96DDE55 /* XCLocalSwiftPackageReference "../.." */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -194,6 +256,7 @@
 			projectRoot = "";
 			targets = (
 				E96670B6E57410470799A7FC /* SKComponentKitExample */,
+				D029DF78C702C8425A9A3E7A /* SKComponentKitExampleTests */,
 				53ED35425493183787732964 /* SKComponentKitExampleUITests */,
 			);
 		};
@@ -208,6 +271,7 @@
 				F72A9FDA7B9D234E8ED84FCE /* ComponentCatalogViewController.swift in Sources */,
 				DB28433363BEDD2466FD4C7E /* ComponentDemo.swift in Sources */,
 				C0F7539995AEC93D061C3497 /* DemoHostViewController.swift in Sources */,
+				64EBFEA961D50F4CEB6996A6 /* ImportedComponentDemos.swift in Sources */,
 				C044CA99EFF7FF55A11CC04F /* PlaygroundViewController.swift in Sources */,
 				FF9B5019DF27CE835FE44870 /* SceneDelegate.swift in Sources */,
 			);
@@ -221,9 +285,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0563FB70D04E2D082B3E50C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F2759F5DEA3FF30629E3EB4 /* ImportedComponentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		235384C7D8B81974FFAEC116 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E96670B6E57410470799A7FC /* SKComponentKitExample */;
+			targetProxy = C0144CD16672C129E65C78C2 /* PBXContainerItemProxy */;
+		};
 		AF1170FC3AB58C8B60BF96DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E96670B6E57410470799A7FC /* SKComponentKitExample */;
@@ -232,6 +309,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		45AD33D0B974279CE8013FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phanithny.SKComponentKit.Example.Tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKComponentKitExample.app/SKComponentKitExample";
+			};
+			name = Debug;
+		};
 		691BEF2B8851F964CE8590E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -393,6 +487,23 @@
 			};
 			name = Release;
 		};
+		8CE7F6FAC0B61227B71D45BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phanithny.SKComponentKit.Example.Tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKComponentKitExample.app/SKComponentKitExample";
+			};
+			name = Release;
+		};
 		9340D8FA94EE6115E92AE7E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +550,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		4E923A0B85DAEB4B850F8E07 /* Build configuration list for PBXNativeTarget "SKComponentKitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45AD33D0B974279CE8013FED /* Debug */,
+				8CE7F6FAC0B61227B71D45BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		7500CDFABDF04E1409F5B0A4 /* Build configuration list for PBXNativeTarget "SKComponentKitExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -466,10 +586,35 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		03B067396447AD1025C77F86 /* XCRemoteSwiftPackageReference "EasyAnchor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PhanithNY/EasyAnchor.git";
+			requirement = {
+				kind = revision;
+				revision = fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		B530386C2CA438BA88537016 /* EasyAnchor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03B067396447AD1025C77F86 /* XCRemoteSwiftPackageReference "EasyAnchor" */;
+			productName = EasyAnchor;
+		};
 		DE664EBD7FD74E5FFA6C88A6 /* SKComponentKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SKComponentKit;
+		};
+		E04ADA8BF2C491A8885523F8 /* SKComponentKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SKComponentKit;
+		};
+		FC8D2E3287BB735F2BDEBF2F /* EasyAnchor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03B067396447AD1025C77F86 /* XCRemoteSwiftPackageReference "EasyAnchor" */;
+			productName = EasyAnchor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

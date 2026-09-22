@@ -7,13 +7,13 @@ struct ComponentDemo {
     let title: String
     let summary: String
     let symbolName: String
-    let makeViewController: () -> UIViewController
+    let makeViewController: @MainActor () -> UIViewController
 }
 
 @MainActor
 enum ComponentRegistry {
     // Keep package demos separate from the example app's UIKit playground.
-    static let components: [ComponentDemo] = []
+    static let components = ImportedComponentDemos.all
 
     static let playground = ComponentDemo(
         title: "UIKit Playground",

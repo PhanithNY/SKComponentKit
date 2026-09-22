@@ -44,6 +44,17 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D029DF78C702C8425A9A3E7A"
+               BuildableName = "SKComponentKitExampleTests.xctest"
+               BlueprintName = "SKComponentKitExampleTests"
+               ReferencedContainer = "container:SKComponentKitExample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "53ED35425493183787732964"
                BuildableName = "SKComponentKitExampleUITests.xctest"
                BlueprintName = "SKComponentKitExampleUITests"

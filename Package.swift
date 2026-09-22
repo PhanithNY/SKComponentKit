@@ -14,7 +14,16 @@ let package = Package(
             targets: ["SKComponentKit"]
         ),
     ],
+    dependencies: [
+        .package(
+            url: "https://github.com/PhanithNY/EasyAnchor.git",
+            revision: "fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc"
+        ),
+    ],
     targets: [
-        .target(name: "SKComponentKit"),
+        .target(
+            name: "SKComponentKit",
+            dependencies: [.product(name: "EasyAnchor", package: "EasyAnchor")]
+        ),
     ]
 )

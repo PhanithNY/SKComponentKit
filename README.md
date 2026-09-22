@@ -2,7 +2,27 @@
 
 Reusable UI components for iOS and macOS, distributed with Swift Package Manager.
 
-The package scaffold is ready. Components will be added over time.
+UIKit components imported from PHComponents, with layouts built using EasyAnchor.
+The package also builds on macOS 26; the imported UIKit components are available on iOS only.
+
+## Components
+
+| Component | Purpose |
+| --- | --- |
+| `PHButton` | Styled buttons with icons and loading states |
+| `PHTextField` | Padded text fields, prefixes, input types, and limits |
+| `PHPaddingLabel` | Labels with adjustable content insets |
+| `PHMarqueeView` | Horizontally scrolling content |
+| `PHRefreshingView` | Animated refresh indicator |
+| `PHZigzagView` | Receipt-style zigzag shape |
+| `PHScrollViewController` / `PHScrollView` | Scroll content and keyboard handling |
+| `PHDialogueViewController` | Custom modal dialogue container |
+| `PHCustomIntensityVisualEffectView` | Adjustable blur intensity |
+| `LoadingViewController` | Modal loading indicator |
+| `PHQRCodeScannerController` / `QRCornerRectangleView` | QR/barcode scanning and frame rendering |
+
+The original type names are preserved. Supporting font, color, haptic, and main-thread helpers
+are also included. See [migration notes](MIGRATION.md) for source revisions and compatibility details.
 
 ## Requirements
 
@@ -44,10 +64,14 @@ The package currently tracks `main`; versioned releases can be added when compon
 
 ```swift
 import SKComponentKit
+
+let button = PHButton.primary(borderStyle: .none)
+button.setTitle("Continue")
+button.onTouchUpInside = { print("Continue tapped") }
 ```
 
-There are no public components yet. Add reusable components under
-`Sources/SKComponentKit/`, marking types and initializers intended for app use as `public`.
+Add reusable components under `Sources/SKComponentKit/`, marking types and initializers
+intended for app use as `public`.
 The library primarily contains UIKit and AppKit components. Wrap UIKit implementations
 in `#if canImport(UIKit)` and AppKit implementations in `#if canImport(AppKit)` so the
 package builds on both platforms. Shared code can remain outside those guards.
@@ -60,8 +84,8 @@ The project uses the package from this checkout, so local changes are available 
 on the next build. No separate package release or XcodeGen installation is needed to run it.
 
 The app includes a searchable component catalog and a reusable demo host with light/dark
-appearance and Dynamic Type controls. A UIKit playground demonstrates the host until real
-package components are added. See the [example guide](Examples/UIKit/README.md) to register a demo.
+appearance and Dynamic Type controls, 12 component demos, and a UIKit playground.
+See the [example guide](Examples/UIKit/README.md) to register a demo.
 
 This iOS example covers UIKit components. AppKit components require a separate native macOS
 example app, which is not included yet.
@@ -84,5 +108,15 @@ xcodebuild -scheme SKComponentKit \
 ```
 
 GitHub Actions builds the library for macOS and the iOS Simulator, plus the UIKit example app,
-on pushes and pull requests.
-Add a test target alongside the first testable component.
+on pushes and pull requests, then runs the component and UI tests on an available iPhone simulator.
+Use **Command-U** in the example project to run component and UI tests.
+
+## Dependency
+
+[EasyAnchor](https://github.com/PhanithNY/EasyAnchor) is pinned to revision
+`fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc` because the repository has no version tags.
+SPM resolves it automatically on both iOS and macOS. PHExtensions is not required.
+
+EasyAnchor's `layout { ... }`, `config { ... }`, and fluent anchor helpers are used throughout
+the imported layouts. Native constraints remain where a mutable constraint reference is needed;
+EasyAnchor currently returns the view rather than the created constraint.
