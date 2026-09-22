@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: macOS and iOS
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain
+        run: swift --version
+      - name: Build for macOS
+        run: swift build
+      - name: Build for iOS Simulator
+        run: >-
+          xcodebuild -scheme SKComponentKit
+          -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath .build/xcode
+          CODE_SIGNING_ALLOWED=NO build
