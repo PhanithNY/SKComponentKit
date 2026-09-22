@@ -1,15 +1,15 @@
-#if canImport(UIKit)
 //
-//  PHDialogueViewController.swift
+//  SKDialogueViewController.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 import EasyAnchor
 
-open class PHDialogueViewController: UIViewController {
+open class SKDialogueViewController: UIViewController {
 
   // MARK: - Properties
 
@@ -53,10 +53,10 @@ open class PHDialogueViewController: UIViewController {
     1.0
   }
 
-  /// Callback when deinit.
+  /// SKCallback when deinit.
   public var onDeinit: (@Sendable () -> Swift.Void)?
 
-  /// Callback when tap outside contentView's bounds.
+  /// SKCallback when tap outside contentView's bounds.
   public var onTapOutside: (() -> Swift.Void)?
 
   /// Background color of visual effect view. Default is nil.
@@ -78,14 +78,14 @@ open class PHDialogueViewController: UIViewController {
     }
   }
 
-  private lazy var effectView: PHCustomIntensityVisualEffectView = {
+  private lazy var effectView: SKCustomIntensityVisualEffectView = {
     let effect: UIBlurEffect
     if #available(iOS 13.0, *) {
       effect = UIBlurEffect(style: .systemThinMaterialDark)
     } else {
       effect = UIBlurEffect(style: .dark)
     }
-    let effectView = PHCustomIntensityVisualEffectView(effect: effect, intensity: blurIntensity)
+    let effectView = SKCustomIntensityVisualEffectView(effect: effect, intensity: blurIntensity)
     return effectView
   }()
 
@@ -218,7 +218,7 @@ open class PHDialogueViewController: UIViewController {
 
 // MARK: - KVO
 
-extension PHDialogueViewController {
+extension SKDialogueViewController {
   private func addKeyboardObservers() {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -257,7 +257,7 @@ extension PHDialogueViewController {
   }
 }
 
-public final class PHCustomIntensityVisualEffectView: UIVisualEffectView {
+public final class SKCustomIntensityVisualEffectView: UIVisualEffectView {
   /// Create visual effect view with given effect and its intensity
   ///
   /// - Parameters:

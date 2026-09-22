@@ -1,20 +1,20 @@
-#if canImport(UIKit)
 //
-//  PHScrollViewController.swift
+//  SKScrollViewController.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 import EasyAnchor
 
-open class PHScrollViewController: UIViewController {
+open class SKScrollViewController: UIViewController {
 
-  /// Callback when keyboard about to show
+  /// SKCallback when keyboard about to show
   public var keyboardWillShowHandler: ((CGFloat) -> Swift.Void)?
 
-  /// Callback when keyboard about to hide
+  /// SKCallback when keyboard about to hide
   public var keyboardWillHideHandler: (() -> Swift.Void)?
 
   /// Automatically adjust content base on keyboard hide/show. Default is false.
@@ -53,7 +53,7 @@ open class PHScrollViewController: UIViewController {
     }
   }
 
-  public private(set) lazy var scrollView = PHScrollView().config {
+  public private(set) lazy var scrollView = SKScrollView().config {
     $0.backgroundColor = .systemBackground
     $0.alwaysBounceVertical = true
     $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -189,7 +189,7 @@ open class PHScrollViewController: UIViewController {
   }
 }
 
-public final class PHScrollView: UIScrollView {
+public final class SKScrollView: UIScrollView {
   public override func touchesShouldCancel(in view: UIView) -> Bool {
     if type(of: view) == UITextField.self || type(of: view) == UITextView.self {
       return true

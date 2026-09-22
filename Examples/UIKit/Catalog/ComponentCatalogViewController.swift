@@ -1,3 +1,10 @@
+//
+//  ComponentCatalogViewController.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import UIKit
 
 final class ComponentCatalogViewController: UITableViewController, UISearchResultsUpdating {

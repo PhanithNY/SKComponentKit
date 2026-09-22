@@ -1,3 +1,10 @@
+//
+//  AppDelegate.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import UIKit
 
 @main

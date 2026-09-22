@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  PHPaddingLabel.swift
+//  SKPaddingLabel.swift
+//  SKComponentKit
 //
-//
-//  Created by Phanith on 29/1/22.
+//  Created by Phanith on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public final class PHPaddingLabel: UILabel {
+public final class SKPaddingLabel: UILabel {
 
   public var topInset: CGFloat = 12.0 {
     didSet { invalidateIntrinsicContentSize(); setNeedsDisplay() }

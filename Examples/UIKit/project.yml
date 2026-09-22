@@ -6,7 +6,7 @@ options:
 packages:
   EasyAnchor:
     url: https://github.com/PhanithNY/EasyAnchor.git
-    revision: fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc
+    branch: master
   SKComponentKit:
     path: ../..
 settings:

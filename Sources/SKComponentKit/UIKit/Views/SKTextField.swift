@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  PHTextField.swift
+//  SKTextField.swift
+//  SKComponentKit
 //
-//
-//  Created by Phanith on 16/04/24.
+//  Created by Phanith on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-open class PHTextField: UITextField {
+open class SKTextField: UITextField {
 
   /// Our custom input types. Use it to handle available cases.
   public enum InputType {
@@ -31,26 +31,26 @@ open class PHTextField: UITextField {
 
   // MARK: - Properties
 
-  /// Callback when user begin to edit (cursor inside textfield).
-  public var onFocus: CallbackType<PHTextField>?
+  /// SKCallback when user begin to edit (cursor inside textfield).
+  public var onFocus: SKCallbackType<SKTextField>?
 
-  /// Callback when user changed or switched to other input (cursor outside textfield).
-  public var onLossFocus: CallbackType<PHTextField>?
+  /// SKCallback when user changed or switched to other input (cursor outside textfield).
+  public var onLossFocus: SKCallbackType<SKTextField>?
 
-  /// Callback when user tap on rightView.
-  public var onRightViewTap: CallbackType<PHTextField>?
+  /// SKCallback when user tap on rightView.
+  public var onRightViewTap: SKCallbackType<SKTextField>?
 
-  /// Callback when user editing text (type .bankAccountNumber).
-  public var onChangeBankAccountNumber: Callback?
+  /// SKCallback when user editing text (type .bankAccountNumber).
+  public var onChangeBankAccountNumber: SKCallback?
 
-  /// Callback when input over limit.
-  public var onLimit: CallbackType<PHTextField>?
+  /// SKCallback when input over limit.
+  public var onLimit: SKCallbackType<SKTextField>?
 
   /// All actions that allowed
   public var allowedActions: [Action] = Action.allCases
 
   /// If allowEditing is false, this closure will invoke when user tap.
-  public var onTap: CallbackType<PHTextField>?
+  public var onTap: SKCallbackType<SKTextField>?
 
   /// Whether editable or not. Default is `true`.
   public var allowEditing: Bool = true
@@ -175,7 +175,7 @@ open class PHTextField: UITextField {
 
 // MARK: - Actions
 
-public extension PHTextField {
+public extension SKTextField {
 
   /// Set action that allowed user to perform like copy, paste...
   /// - Parameter actions: Actions that user can perform.
@@ -294,7 +294,7 @@ public extension PHTextField {
 
 // MARK: - Layouts
 
-extension PHTextField {
+extension SKTextField {
   private func prepareLayouts() {
     borderStyle = .roundedRect
     delegate = self
@@ -303,7 +303,7 @@ extension PHTextField {
 
 // MARK: - UITextFieldDelegate
 
-extension PHTextField: UITextFieldDelegate {
+extension SKTextField: UITextFieldDelegate {
   public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     if !allowEditing {
       onTap?(self)

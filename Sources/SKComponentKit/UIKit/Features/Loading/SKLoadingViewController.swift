@@ -1,32 +1,32 @@
-#if canImport(UIKit)
 //
-//  LoadingViewController.swift
+//  SKLoadingViewController.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 15/7/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 import EasyAnchor
 
-public final class LoadingViewController: UIViewController {
+public final class SKLoadingViewController: UIViewController {
 
   public static func show(transparent: CGFloat = 0.4,
                           tintColor: UIColor? = .white,
                           animated: Bool = true,
                           completion: (() -> Void)? = nil) {
-    MainThread.run {
+    SKMainThread.run {
       if let viewController = topViewController(),
-         type(of: viewController) != LoadingViewController.self {
-        let loadingViewController: LoadingViewController = .init(transparent: transparent, tintColor: tintColor)
+         type(of: viewController) != SKLoadingViewController.self {
+        let loadingViewController: SKLoadingViewController = .init(transparent: transparent, tintColor: tintColor)
         viewController.present(loadingViewController, animated: animated, completion: completion)
       }
     }
   }
 
   public static func hide(animated: Bool = false, completion: (() -> Void)? = nil) {
-    MainThread.run {
-      if let loadingViewController = topViewController() as? LoadingViewController {
+    SKMainThread.run {
+      if let loadingViewController = topViewController() as? SKLoadingViewController {
         loadingViewController.dismiss(animated: animated, completion: completion)
       }
     }

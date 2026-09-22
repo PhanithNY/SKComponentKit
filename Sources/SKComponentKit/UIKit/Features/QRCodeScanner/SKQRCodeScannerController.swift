@@ -1,19 +1,19 @@
-#if canImport(UIKit)
 //
-//  PHQRCodeScannerController.swift
+//  SKQRCodeScannerController.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import AVFoundation
 import UIKit
 import EasyAnchor
 
 @available(macCatalyst 14.0, *)
-open class PHQRCodeScannerController: UIViewController {
+open class SKQRCodeScannerController: UIViewController {
 
-  /// Callback after reading QR/Barcode.
+  /// SKCallback after reading QR/Barcode.
   public var onResult: ((String) -> Swift.Void)?
 
   public enum DismissalMode {
@@ -70,8 +70,8 @@ open class PHQRCodeScannerController: UIViewController {
   }
 
   /// Scan rect
-  public lazy var rectView: QRCornerRectangleView = {
-    let view = QRCornerRectangleView()
+  public lazy var rectView: SKQRCornerRectangleView = {
+    let view = SKQRCornerRectangleView()
     view.backgroundColor = .clear
     view.color = scanFrameCornerColor
     view.thickness = 5.0
@@ -177,7 +177,7 @@ open class PHQRCodeScannerController: UIViewController {
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
 
 @available(macCatalyst 14.0, *)
-extension PHQRCodeScannerController: @preconcurrency AVCaptureMetadataOutputObjectsDelegate {
+extension SKQRCodeScannerController: @preconcurrency AVCaptureMetadataOutputObjectsDelegate {
   public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
     if !canProcessResult {
       return
@@ -225,7 +225,7 @@ extension PHQRCodeScannerController: @preconcurrency AVCaptureMetadataOutputObje
 // MARK: - Layouts
 @available(macCatalyst 14.0, *)
 
-extension PHQRCodeScannerController {
+extension SKQRCodeScannerController {
   private func prepareLayouts() {
     view.backgroundColor = .black
     rectView.layout {
@@ -299,7 +299,7 @@ extension PHQRCodeScannerController {
   }
 }
 
-public final class QRCornerRectangleView: UIView {
+public final class SKQRCornerRectangleView: UIView {
   public var color = UIColor.black {
     didSet {
       setNeedsDisplay()

@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  PHRefreshingView.swift
+//  SKRefreshingView.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 3/5/23.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public final class PHRefreshingView: UIView {
+public final class SKRefreshingView: UIView {
 
   // MARK: - Properties
 
@@ -42,7 +42,7 @@ public final class PHRefreshingView: UIView {
   }
 
   private func setUpAnimation() {
-    setUpAnimation(in: layer, size: CGSize(width: 32, height: 32), color: tintColor ?? Core.Color.tintColor)
+    setUpAnimation(in: layer, size: CGSize(width: 32, height: 32), color: tintColor ?? SKCore.Color.tintColor)
   }
 
   private func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {

@@ -1,16 +1,16 @@
-#if canImport(UIKit)
 //
-//  Haptic.swift
+//  SKHaptic.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public enum Haptic {
-  case impact(HapticFeedbackStyle)
-  case notification(HapticFeedbackType)
+public enum SKHaptic {
+  case impact(SKHapticFeedbackStyle)
+  case notification(SKHapticFeedbackType)
   case selection
 
   @MainActor
@@ -34,26 +34,26 @@ public enum Haptic {
   }
 }
 
-public enum HapticFeedbackStyle: Int {
+public enum SKHapticFeedbackStyle: Int {
   case light, medium, heavy
 
   @available(iOS 13.0, *)
   case soft, rigid
 }
 
-public extension HapticFeedbackStyle {
+public extension SKHapticFeedbackStyle {
   var value: UIImpactFeedbackGenerator.FeedbackStyle {
     return UIImpactFeedbackGenerator.FeedbackStyle(rawValue: rawValue)!
   }
 }
 
-public enum HapticFeedbackType: Int {
+public enum SKHapticFeedbackType: Int {
   case success
   case warning
   case error
 }
 
-public extension HapticFeedbackType {
+public extension SKHapticFeedbackType {
   var value: UINotificationFeedbackGenerator.FeedbackType {
     return UINotificationFeedbackGenerator.FeedbackType(rawValue: rawValue)!
   }

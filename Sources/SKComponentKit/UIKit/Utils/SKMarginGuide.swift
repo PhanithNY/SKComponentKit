@@ -1,15 +1,15 @@
-#if canImport(UIKit)
 //
-//  MarginGuide.swift
+//  SKMarginGuide.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 @MainActor
-public enum MarginGuide {
+public enum SKMarginGuide {
   public static var horizontalPadding: CGFloat {
     switch _Config.shared.sizeClass {
     case .large,
@@ -23,7 +23,7 @@ public enum MarginGuide {
 }
 
 @MainActor
-public enum Device {
+public enum SKDevice {
   public static var hasNotch: Bool {
     if UIDevice.current.userInterfaceIdiom == .phone {
       return UIScreen.main.bounds.height >= 812

@@ -2,7 +2,8 @@
 
 Imported from [PhanithNY/PHComponents](https://github.com/PhanithNY/PHComponents/tree/0c670ab906d18ec4a8c96061a689675cec8b1dc0/Sources/PHComponents),
 revision `0c670ab906d18ec4a8c96061a689675cec8b1dc0`.
-Original author headers are retained. The upstream repository did not include a license file
+Original author names are retained, with package file headers dated September 22, 2026.
+The upstream repository did not include a license file
 at this revision; this import does not introduce a new license for that source.
 
 EasyAnchor is consumed as a package dependency, not copied. Its source and MIT license are
@@ -10,16 +11,22 @@ available in [PhanithNY/EasyAnchor](https://github.com/PhanithNY/EasyAnchor/tree
 
 ## API and platform compatibility
 
-- Import `SKComponentKit` instead of `PHComponents`. Existing `PH` type names are preserved.
+- Import `SKComponentKit` instead of `PHComponents`. Component types now use `SK` instead of `PH`
+  (for example, `PHButton` → `SKButton`). The unprefixed loading and QR frame types are now
+  `SKLoadingViewController` and `SKQRCornerRectangleView`. Public utility types also use `SK`,
+  including `SKCore`, `SKFont`, `SKHaptic`, `SKMainThread`, and the callback aliases.
+  This is a source-breaking rename; update client references to the new names.
 - All six view files, four controller feature files, and supporting utility files are under
   `Sources/SKComponentKit/UIKit`, guarded with `canImport(UIKit)`.
 - Minimum deployment versions remain iOS 15 and macOS 26. The imported controls are UIKit
   implementations; this migration does not convert them into AppKit views.
-- `PHZigzagView` and its initializer are now public so client apps can use it.
-- EasyAnchor is the sole external dependency. The optional-string helper needed from
+- `SKZigzagView` and its initializer are now public so client apps can use it.
+- EasyAnchor tracks `master`. BlurUIKit uses compatible versions starting at 1.5.0 and is an
+  iOS-only target dependency, so macOS builds do not compile UIKit-only upstream code.
+  The optional-string helper needed from
   PHExtensions is internal to this module; existing color/string helpers are retained.
-- UIKit utilities use main-actor isolation under Swift 6. `MainThread` accepts
-  `@MainActor @Sendable` closures. `PHDialogueViewController.onDeinit` is `@Sendable` and
+- UIKit utilities use main-actor isolation under Swift 6. `SKMainThread` accepts
+  `@MainActor @Sendable` closures. `SKDialogueViewController.onDeinit` is `@Sendable` and
   must not directly access actor-isolated UI; schedule UI cleanup on the main actor if needed.
 - Fixed layouts use EasyAnchor. Mutable button constraints remain native because EasyAnchor
   does not return constraint handles. Marquee animation and custom shape drawing still use

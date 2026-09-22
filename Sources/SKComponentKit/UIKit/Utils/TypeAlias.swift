@@ -1,13 +1,13 @@
-#if canImport(UIKit)
 //
 //  TypeAlias.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import Foundation
 
-public typealias CallbackType<T> = ((T) -> Void)
-public typealias Callback = (() -> Void)
+public typealias SKCallbackType<T> = ((T) -> Void)
+public typealias SKCallback = (() -> Void)
 #endif

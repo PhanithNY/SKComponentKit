@@ -1,3 +1,10 @@
+//
+//  DemoHostViewController.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import UIKit
 
 /// Hosts any UIKit demo with appearance and Dynamic Type overrides scoped to this screen.

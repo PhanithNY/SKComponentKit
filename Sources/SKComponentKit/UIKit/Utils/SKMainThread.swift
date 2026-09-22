@@ -1,9 +1,14 @@
+//
+//  SKMainThread.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 #if canImport(UIKit)
-// Originally created by Suykorng on 16/4/24 in PHComponents.
-// Updated for Swift 6 main-actor and Sendable closure isolation.
 import Foundation
 
-public enum MainThread {
+public enum SKMainThread {
   public static func run(_ block: @escaping @MainActor @Sendable () -> Void) {
     if Thread.isMainThread {
       MainActor.assumeIsolated { block() }

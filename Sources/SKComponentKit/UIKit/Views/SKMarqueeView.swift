@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  PHMarqueeView.swift
+//  SKMarqueeView.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 3/1/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public final class PHMarqueeView: UIView {
+public final class SKMarqueeView: UIView {
 
   public var contentViewFrameConfigWhenCantMarquee: ((UIView)->())?
 
@@ -204,8 +204,8 @@ extension UIView {
 }
 @MainActor
 private final class MarqueeDisplayLinkTarget {
-  weak var owner: PHMarqueeView?
-  init(owner: PHMarqueeView) { self.owner = owner }
+  weak var owner: SKMarqueeView?
+  init(owner: SKMarqueeView) { self.owner = owner }
   @objc func tick(_ link: CADisplayLink) {
     guard let owner else {
       link.invalidate()

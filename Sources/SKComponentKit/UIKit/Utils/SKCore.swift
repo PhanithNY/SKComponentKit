@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  Core.swift
+//  SKCore.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public enum Core {
+public enum SKCore {
 
   @MainActor
   public enum Label {

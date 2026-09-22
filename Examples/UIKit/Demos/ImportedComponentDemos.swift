@@ -1,3 +1,10 @@
+//
+//  ImportedComponentDemos.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import EasyAnchor
 import SKComponentKit
 import UIKit
@@ -5,18 +12,18 @@ import UIKit
 @MainActor
 enum ImportedComponentDemos {
     static let all: [ComponentDemo] = [
-        demo("Buttons", "PHButton styles, icons, disabled and loading states.", "rectangle.and.hand.point.up.left", buttons),
-        demo("Text Fields", "PHTextField padding, prefixes, limits, and input types.", "text.cursor", textFields),
-        demo("Padding Label", "PHPaddingLabel with multiline text and content insets.", "text.alignleft", paddingLabel),
-        demo("Marquee", "PHMarqueeView scrolling with start and stop controls.", "arrow.left.and.right", marquee),
-        demo("Refresh Indicator", "PHRefreshingView animation and tint changes.", "arrow.clockwise", refreshing),
-        demo("Zigzag", "PHZigzagView receipt-style shape.", "receipt", zigzag),
-        demo("Scroll Container", "PHScrollViewController with keyboard-aware content.", "scroll", { ScrollComponentDemo() }),
-        demo("Dialogue", "PHDialogueViewController presentation and dismissal.", "rectangle.on.rectangle", dialogue),
-        demo("Loading Overlay", "LoadingViewController presentation and dismissal.", "hourglass", loading),
-        demo("QR Scanner", "PHQRCodeScannerController; scanning requires a device.", "qrcode.viewfinder", scanner),
-        demo("Blur Effect", "PHCustomIntensityVisualEffectView at three intensities.", "drop.halffull", blur),
-        demo("QR Frame", "QRCornerRectangleView color and corner styling.", "viewfinder", qrFrame),
+        demo("Buttons", "SKButton styles, icons, disabled and loading states.", "rectangle.and.hand.point.up.left", buttons),
+        demo("Text Fields", "SKTextField padding, prefixes, limits, and input types.", "text.cursor", textFields),
+        demo("Padding Label", "SKPaddingLabel with multiline text and content insets.", "text.alignleft", paddingLabel),
+        demo("Marquee", "SKMarqueeView scrolling with start and stop controls.", "arrow.left.and.right", marquee),
+        demo("Refresh Indicator", "SKRefreshingView animation and tint changes.", "arrow.clockwise", refreshing),
+        demo("Zigzag", "SKZigzagView receipt-style shape.", "receipt", zigzag),
+        demo("Scroll Container", "SKScrollViewController with keyboard-aware content.", "scroll", { ScrollComponentDemo() }),
+        demo("Dialogue", "SKDialogueViewController presentation and dismissal.", "rectangle.on.rectangle", dialogue),
+        demo("Loading Overlay", "SKLoadingViewController presentation and dismissal.", "hourglass", loading),
+        demo("QR Scanner", "SKQRCodeScannerController; scanning requires a device.", "qrcode.viewfinder", scanner),
+        demo("Blur Effect", "SKCustomIntensityVisualEffectView at three intensities.", "drop.halffull", blur),
+        demo("QR Frame", "SKQRCornerRectangleView color and corner styling.", "viewfinder", qrFrame),
     ]
 
     private static func demo(
@@ -30,7 +37,7 @@ enum ImportedComponentDemos {
         let screen = ComponentStackViewController()
         let status = screen.addText("Tap a button to test its callback.")
         status.accessibilityIdentifier = "componentButtonStatus"
-        let styles: [(String, PHButton)] = [
+        let styles: [(String, SKButton)] = [
             ("Primary", .primary(borderStyle: .none)),
             ("Outline", .primary(borderStyle: .border)),
             ("Normal", .default(borderStyle: .border)),
@@ -41,15 +48,15 @@ enum ImportedComponentDemos {
             button.onTouchUpInside = { [weak status] in status?.text = "\(title) tapped" }
             screen.stack.addArrangedSubview(button)
         }
-        let disabled = PHButton.primary(borderStyle: .none)
+        let disabled = SKButton.primary(borderStyle: .none)
         disabled.setTitle("Disabled")
         disabled.isEnabled = false
         screen.stack.addArrangedSubview(disabled)
-        let loading = PHButton.primary(borderStyle: .none)
+        let loading = SKButton.primary(borderStyle: .none)
         loading.setTitle("Loading")
         loading.showsActivityIndicator = true
         screen.stack.addArrangedSubview(loading)
-        let icon = PHButton.primary(borderStyle: .none)
+        let icon = SKButton.primary(borderStyle: .none)
         icon.setTitle("With Icon")
         icon.setLeadingImage(UIImage(systemName: "star.fill"), tintColor: .white)
         screen.stack.addArrangedSubview(icon)
@@ -59,14 +66,14 @@ enum ImportedComponentDemos {
     private static func textFields() -> UIViewController {
         let screen = ComponentStackViewController()
         screen.addText("Try editing each field. Tap Done to dismiss the keyboard.")
-        let configurations: [(String, PHTextField.InputType, String?)] = [
+        let configurations: [(String, SKTextField.InputType, String?)] = [
             ("Name (20 characters)", .default, nil),
             ("Amount", .currency, "$"),
             ("Account number", .bankAccountNumber, nil),
             ("Email address", .email, nil),
         ]
         for (placeholder, type, prefix) in configurations {
-            let field = PHTextField(frame: .zero)
+            let field = SKTextField(frame: .zero)
             field.placeholder = placeholder
             field.accessibilityLabel = placeholder
             field.setPreferredInputType(type)
@@ -81,7 +88,7 @@ enum ImportedComponentDemos {
 
     private static func paddingLabel() -> UIViewController {
         let screen = ComponentStackViewController()
-        let label = PHPaddingLabel()
+        let label = SKPaddingLabel()
         label.text = "A padded label that supports multiple lines. Change text size using Preview."
         label.font = .preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
@@ -98,7 +105,7 @@ enum ImportedComponentDemos {
 
     private static func marquee() -> UIViewController {
         let screen = ComponentStackViewController()
-        let marquee = PHMarqueeView()
+        let marquee = SKMarqueeView()
         let label = UILabel()
         label.text = "SKComponentKit • Reusable UIKit components • EasyAnchor layouts • "
         label.font = .preferredFont(forTextStyle: .title2)
@@ -115,7 +122,7 @@ enum ImportedComponentDemos {
         let screen = ComponentStackViewController()
         let container = UIView()
         container.height(80)
-        let spinner = PHRefreshingView()
+        let spinner = SKRefreshingView()
         spinner.layout {
             container.addSubview($0)
             $0.size(equalTo: 32).center()
@@ -130,7 +137,7 @@ enum ImportedComponentDemos {
 
     private static func zigzag() -> UIViewController {
         let screen = ComponentStackViewController()
-        let receipt = PHZigzagView(numberOfZigZagLines: 24)
+        let receipt = SKZigzagView(numberOfZigZagLines: 24)
         receipt.height(160)
         let label = UILabel()
         label.text = "SKComponentKit\nReceipt preview"
@@ -156,9 +163,9 @@ enum ImportedComponentDemos {
         let screen = ComponentStackViewController()
         screen.addText("The overlay dismisses automatically after one second.")
         screen.addButton("Show Loading") { [weak screen] in
-            let overlay = LoadingViewController()
+            let overlay = SKLoadingViewController()
             screen?.present(overlay, animated: true) { [weak overlay] in
-                MainThread.delay(after: .now() + 1) { [weak overlay] in
+                SKMainThread.delay(after: .now() + 1) { [weak overlay] in
                     overlay?.dismiss(animated: true)
                 }
             }
@@ -170,7 +177,7 @@ enum ImportedComponentDemos {
         let screen = ComponentStackViewController()
         let result = screen.addText("Use a physical device to scan QR codes. Simulator shows the scanning frame only.")
         screen.addButton("Open Scanner") { [weak screen, weak result] in
-            let scanner = PHQRCodeScannerController()
+            let scanner = SKQRCodeScannerController()
             scanner.title = "Scan QR Code"
             scanner.onResult = { [weak result] value in result?.text = "Scanned: \(value)" }
             screen?.navigationController?.pushViewController(scanner, animated: true)
@@ -189,7 +196,7 @@ enum ImportedComponentDemos {
             label.text = "Background content"
             label.textColor = .white
             label.layout { background.addSubview($0); $0.center() }
-            let blur = PHCustomIntensityVisualEffectView(effect: UIBlurEffect(style: .systemMaterial), intensity: intensity)
+            let blur = SKCustomIntensityVisualEffectView(effect: UIBlurEffect(style: .systemMaterial), intensity: intensity)
             blur.layout { background.addSubview($0); $0.fill() }
             screen.stack.addArrangedSubview(background)
         }
@@ -198,7 +205,7 @@ enum ImportedComponentDemos {
 
     private static func qrFrame() -> UIViewController {
         let screen = ComponentStackViewController()
-        let frame = QRCornerRectangleView()
+        let frame = SKQRCornerRectangleView()
         frame.backgroundColor = .secondarySystemBackground
         frame.color = .systemBlue
         frame.radius = 16
@@ -258,7 +265,7 @@ private final class ComponentStackViewController: UIViewController {
     }
 }
 
-private final class ScrollComponentDemo: PHScrollViewController {
+private final class ScrollComponentDemo: SKScrollViewController {
     override var allowedKeyboardObservation: Bool { true }
 
     override func viewDidLoad() {
@@ -269,7 +276,7 @@ private final class ScrollComponentDemo: PHScrollViewController {
         stack.axis = .vertical
         stack.spacing = 20
         for index in 1...12 {
-            let field = PHTextField(frame: .zero)
+            let field = SKTextField(frame: .zero)
             field.placeholder = "Field \(index)"
             field.height(48)
             stack.addArrangedSubview(field)
@@ -278,7 +285,7 @@ private final class ScrollComponentDemo: PHScrollViewController {
     }
 }
 
-private final class DialogueComponentDemo: PHDialogueViewController {
+private final class DialogueComponentDemo: SKDialogueViewController {
     override var allowDismissOnTap: Bool { true }
 
     override func viewDidLoad() {

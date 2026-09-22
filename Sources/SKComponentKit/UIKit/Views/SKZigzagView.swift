@@ -1,14 +1,14 @@
-#if canImport(UIKit)
 //
-//  PHZigzagView.swift
-//  WingLandingPage
+//  SKZigzagView.swift
+//  SKComponentKit
 //
-//  Created by Suykorng on 1/5/23.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public final class PHZigzagView: UIView {
+public final class SKZigzagView: UIView {
 
   // MARK: - Init / Deinit
 
@@ -77,7 +77,7 @@ public final class PHZigzagView: UIView {
     zigZagPath.close()
 
     let borderWidth: CGFloat = UIScreen.main.scale >= 3 ? 0.66 : 1.0
-    let borderColor: UIColor = Core.Color.separator
+    let borderColor: UIColor = SKCore.Color.separator
     borderLayer.path = zigZagPath.cgPath
     borderLayer.lineWidth = borderWidth
     borderLayer.strokeColor = borderColor.resolvedColor(with: traitCollection).cgColor

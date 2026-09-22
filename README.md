@@ -9,19 +9,19 @@ The package also builds on macOS 26; the imported UIKit components are available
 
 | Component | Purpose |
 | --- | --- |
-| `PHButton` | Styled buttons with icons and loading states |
-| `PHTextField` | Padded text fields, prefixes, input types, and limits |
-| `PHPaddingLabel` | Labels with adjustable content insets |
-| `PHMarqueeView` | Horizontally scrolling content |
-| `PHRefreshingView` | Animated refresh indicator |
-| `PHZigzagView` | Receipt-style zigzag shape |
-| `PHScrollViewController` / `PHScrollView` | Scroll content and keyboard handling |
-| `PHDialogueViewController` | Custom modal dialogue container |
-| `PHCustomIntensityVisualEffectView` | Adjustable blur intensity |
-| `LoadingViewController` | Modal loading indicator |
-| `PHQRCodeScannerController` / `QRCornerRectangleView` | QR/barcode scanning and frame rendering |
+| `SKButton` | Styled buttons with icons and loading states |
+| `SKTextField` | Padded text fields, prefixes, input types, and limits |
+| `SKPaddingLabel` | Labels with adjustable content insets |
+| `SKMarqueeView` | Horizontally scrolling content |
+| `SKRefreshingView` | Animated refresh indicator |
+| `SKZigzagView` | Receipt-style zigzag shape |
+| `SKScrollViewController` / `SKScrollView` | Scroll content and keyboard handling |
+| `SKDialogueViewController` | Custom modal dialogue container |
+| `SKCustomIntensityVisualEffectView` | Adjustable blur intensity |
+| `SKLoadingViewController` | Modal loading indicator |
+| `SKQRCodeScannerController` / `SKQRCornerRectangleView` | QR/barcode scanning and frame rendering |
 
-The original type names are preserved. Supporting font, color, haptic, and main-thread helpers
+Public component and utility types use the `SK` prefix. Supporting font, color, haptic, and main-thread helpers
 are also included. See [migration notes](MIGRATION.md) for source revisions and compatibility details.
 
 ## Requirements
@@ -65,7 +65,7 @@ The package currently tracks `main`; versioned releases can be added when compon
 ```swift
 import SKComponentKit
 
-let button = PHButton.primary(borderStyle: .none)
+let button = SKButton.primary(borderStyle: .none)
 button.setTitle("Continue")
 button.onTouchUpInside = { print("Continue tapped") }
 ```
@@ -111,11 +111,14 @@ GitHub Actions builds the library for macOS and the iOS Simulator, plus the UIKi
 on pushes and pull requests, then runs the component and UI tests on an available iPhone simulator.
 Use **Command-U** in the example project to run component and UI tests.
 
-## Dependency
+## Dependencies
 
-[EasyAnchor](https://github.com/PhanithNY/EasyAnchor) is pinned to revision
-`fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc` because the repository has no version tags.
-SPM resolves it automatically on both iOS and macOS. PHExtensions is not required.
+- [EasyAnchor](https://github.com/PhanithNY/EasyAnchor) tracks the `master` branch on iOS and macOS.
+- [BlurUIKit](https://github.com/TimOliver/BlurUIKit) uses compatible releases starting at `1.5.0`
+  and is linked on iOS only. Its UIKit implementation is not compiled for macOS.
+
+SPM resolves these automatically. Committed lockfiles record the resolved revisions; use Xcode's
+package update command to pick up new EasyAnchor `master` commits. PHExtensions is not required.
 
 EasyAnchor's `layout { ... }`, `config { ... }`, and fluent anchor helpers are used throughout
 the imported layouts. Native constraints remain where a mutable constraint reference is needed;

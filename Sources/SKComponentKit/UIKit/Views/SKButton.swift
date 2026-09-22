@@ -1,15 +1,15 @@
-#if canImport(UIKit)
 //
-//  PHButton.swift
+//  SKButton.swift
+//  SKComponentKit
 //
-//
-//  Created by Phanith on 7/8/23.
+//  Created by Phanith on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 import EasyAnchor
 
-public final class PHButton: UIControl {
+public final class SKButton: UIControl {
 
   /// Type of button.
   /// Available type are normal, primary, destructive.
@@ -25,13 +25,13 @@ public final class PHButton: UIControl {
     public var borderColor: UIColor {
       switch self {
       case .destructive:
-        return Core.Color.red
+        return SKCore.Color.red
 
       case .normal:
-        return Core.Label.primary
+        return SKCore.Label.primary
 
       case .primary:
-        return Core.Color.tintColor
+        return SKCore.Color.tintColor
       }
     }
   }
@@ -66,10 +66,10 @@ public final class PHButton: UIControl {
     public var font: UIFont {
       switch self {
       case .small:
-        return Font.size(14, weight: .semibold)
+        return SKFont.size(14, weight: .semibold)
 
       case .medium:
-        return Font.size(16, weight: .semibold)
+        return SKFont.size(16, weight: .semibold)
       }
     }
   }
@@ -82,7 +82,7 @@ public final class PHButton: UIControl {
 
   // MARK: - Properties
 
-  public var onTouchUpInside: Callback?
+  public var onTouchUpInside: SKCallback?
 
   /// Type of current button. Default is primary.
   public var type: ButtonType = .primary
@@ -295,7 +295,7 @@ public final class PHButton: UIControl {
 
 // MARK: - Actions
 
-extension PHButton {
+extension SKButton {
   @objc
   private func touchUpInside() {
     animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut, animations: { [self] in
@@ -334,7 +334,7 @@ extension PHButton {
 
 // MARK: - Layouts
 
-extension PHButton {
+extension SKButton {
   private func prepareLayouts() {
     isAccessibilityElement = true
     accessibilityTraits = .button
@@ -374,18 +374,18 @@ extension PHButton {
   }
 }
 
-public extension PHButton {
+public extension SKButton {
 
   /// Build the default button.
   /// - Parameter borderStyle: Button border style.
   /// - Returns: Result of current button builder.
-  static func `default`(borderStyle: ButtonBorderStyle) -> PHButton {
-    PHButton(type: .normal).config {
-      $0.setBackgroundColor(borderStyle == .none ? .clear : Core.Background.background)
+  static func `default`(borderStyle: ButtonBorderStyle) -> SKButton {
+    SKButton(type: .normal).config {
+      $0.setBackgroundColor(borderStyle == .none ? .clear : SKCore.Background.background)
       $0.style = .plain
       $0.size = .medium
       $0.borderStyle = borderStyle
-      $0.setTitleColor(Core.Label.primary)
+      $0.setTitleColor(SKCore.Label.primary)
       $0.setNeedsUpdateConfiguration()
     }
   }
@@ -393,13 +393,13 @@ public extension PHButton {
   /// Build the primary button.
   /// - Parameter borderStyle: Button border style.
   /// - Returns: Result of current button builder.
-  static func primary(borderStyle: ButtonBorderStyle) -> PHButton {
-    PHButton(type: .primary).config {
-      $0.setBackgroundColor(borderStyle == .none ? Core.Color.tintColor : Core.Background.background)
+  static func primary(borderStyle: ButtonBorderStyle) -> SKButton {
+    SKButton(type: .primary).config {
+      $0.setBackgroundColor(borderStyle == .none ? SKCore.Color.tintColor : SKCore.Background.background)
       $0.style = .roundedRect
       $0.size = .medium
       $0.borderStyle = borderStyle
-      $0.setTitleColor(borderStyle == .none ? .white : Core.Color.tintColor)
+      $0.setTitleColor(borderStyle == .none ? .white : SKCore.Color.tintColor)
       $0.setNeedsUpdateConfiguration()
     }
   }
@@ -407,13 +407,13 @@ public extension PHButton {
   /// Build the destructive button.
   /// - Parameter borderStyle: Button border style.
   /// - Returns: Result of current button builder.
-  static func destructive(borderStyle: ButtonBorderStyle) -> PHButton {
-    PHButton(type: .destructive).config {
-      $0.setBackgroundColor(borderStyle == .none ? Core.Color.red : Core.Background.background)
+  static func destructive(borderStyle: ButtonBorderStyle) -> SKButton {
+    SKButton(type: .destructive).config {
+      $0.setBackgroundColor(borderStyle == .none ? SKCore.Color.red : SKCore.Background.background)
       $0.style = .roundedRect
       $0.size = .medium
       $0.borderStyle = borderStyle
-      $0.setTitleColor(borderStyle == .none ? .white : Core.Color.red)
+      $0.setTitleColor(borderStyle == .none ? .white : SKCore.Color.red)
       $0.setNeedsUpdateConfiguration()
     }
   }

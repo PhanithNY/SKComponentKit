@@ -1,11 +1,21 @@
 {
-  "originHash" : "98f82eb900bd88363f50ceddd29133e6ab5543a273546e2feb58e771768a6309",
+  "originHash" : "04e416c41112cceb23c03728be4fe32ce8e1331088884f068c789c20f3c45529",
   "pins" : [
+    {
+      "identity" : "bluruikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimOliver/BlurUIKit.git",
+      "state" : {
+        "revision" : "235de46a35bae4f5f7bf905831969277b4e7d2aa",
+        "version" : "1.5.0"
+      }
+    },
     {
       "identity" : "easyanchor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PhanithNY/EasyAnchor.git",
       "state" : {
+        "branch" : "master",
         "revision" : "fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc"
       }
     }

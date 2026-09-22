@@ -591,8 +591,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PhanithNY/EasyAnchor.git";
 			requirement = {
-				kind = revision;
-				revision = fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

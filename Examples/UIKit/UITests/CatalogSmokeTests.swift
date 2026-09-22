@@ -1,3 +1,10 @@
+//
+//  CatalogSmokeTests.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import XCTest
 
 final class CatalogSmokeTests: XCTestCase {

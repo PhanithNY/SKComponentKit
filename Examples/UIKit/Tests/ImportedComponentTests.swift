@@ -1,3 +1,10 @@
+//
+//  ImportedComponentTests.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import EasyAnchor
 import SKComponentKit
 import UIKit
@@ -24,7 +31,7 @@ final class ImportedComponentTests: XCTestCase {
     @MainActor
     func testButtonSizingAndLoadingState() {
         let parent = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 100))
-        let button = PHButton.primary(borderStyle: .none)
+        let button = SKButton.primary(borderStyle: .none)
         button.setTitle("Continue")
         button.layout { parent.addSubview($0); $0.leading(16).trailing(16).centerY() }
         parent.layoutIfNeeded()
@@ -43,7 +50,7 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testPaddingChangesIntrinsicSize() {
-        let label = PHPaddingLabel()
+        let label = SKPaddingLabel()
         label.text = "Hello"
         label.insets = .zero
         let original = label.intrinsicContentSize
@@ -54,7 +61,7 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testRefreshingDoesNotAccumulateAnimationLayers() {
-        let view = PHRefreshingView()
+        let view = SKRefreshingView()
         view.startAnimating()
         XCTAssertTrue(view.isAnimating)
         let count = view.layer.sublayers?.count
@@ -70,7 +77,7 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testZigzagAcceptsZeroAndReusesItsShapeLayer() {
-        let view = PHZigzagView(numberOfZigZagLines: 0)
+        let view = SKZigzagView(numberOfZigZagLines: 0)
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
         for _ in 0..<3 {
@@ -81,9 +88,9 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testMarqueeDoesNotRetainItselfWhileRunning() {
-        weak var reference: PHMarqueeView?
+        weak var reference: SKMarqueeView?
         autoreleasepool {
-            let marquee = PHMarqueeView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+            let marquee = SKMarqueeView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
             let label = UILabel()
             label.text = "A long marquee label for scrolling"
             marquee.contentView = label
@@ -96,7 +103,7 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testTextFieldPrefixAndCharacterLimit() {
-        let field = PHTextField()
+        let field = SKTextField()
         field.setMaximumAllowedCharacters(3)
         field.text = "abc"
         XCTAssertFalse(field.textField(field, shouldChangeCharactersIn: NSRange(location: 3, length: 0), replacementString: "d"))
@@ -109,7 +116,7 @@ final class ImportedComponentTests: XCTestCase {
 
     @MainActor
     func testScannerFrameHasSingleEasyAnchorConstraintSet() {
-        let scanner = PHQRCodeScannerController()
+        let scanner = SKQRCodeScannerController()
         scanner.loadViewIfNeeded()
         scanner.view.frame = CGRect(x: 0, y: 0, width: 375, height: 812)
         scanner.view.layoutIfNeeded()

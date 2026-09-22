@@ -1,11 +1,11 @@
-#if canImport(UIKit)
 //
 //  UIColor+Extensions.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension UIColor {

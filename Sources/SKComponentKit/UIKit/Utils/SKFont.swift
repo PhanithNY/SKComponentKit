@@ -1,15 +1,15 @@
-#if canImport(UIKit)
 //
-//  Font.swift
+//  SKFont.swift
+//  SKComponentKit
 //
-//
-//  Created by Suykorng on 16/4/24.
+//  Created by Suykorng on 22/9/26.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 @MainActor
-public final class Font {
+public final class SKFont {
 
   private init() {}
 

@@ -1,3 +1,10 @@
+//
+//  ComponentDemo.swift
+//  SKComponentKit
+//
+//  Created by Suykorng on 22/9/26.
+//
+
 import SKComponentKit
 import UIKit
 
