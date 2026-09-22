@@ -12,6 +12,7 @@
 		7068667FEF6B362688049186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BBCB3E3B70D87E0435237 /* AppDelegate.swift */; };
 		87C57A4D284060FAC3F356C7 /* SKComponentKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE664EBD7FD74E5FFA6C88A6 /* SKComponentKit */; };
 		907DE388723D9EB226CE9820 /* EasyAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = FC8D2E3287BB735F2BDEBF2F /* EasyAnchor */; };
+		B906B8CAEDF34CDF2830E72E /* PublicAPIAvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A978452C56FC2C78E831BF /* PublicAPIAvailabilityTests.swift */; };
 		C044CA99EFF7FF55A11CC04F /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E081A83AF9498F92017B9 /* PlaygroundViewController.swift */; };
 		C0F7539995AEC93D061C3497 /* DemoHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B9302967A5E0B4FB72B4A /* DemoHostViewController.swift */; };
 		DB28433363BEDD2466FD4C7E /* ComponentDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A386C0B7891E992A5A23A /* ComponentDemo.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13A978452C56FC2C78E831BF /* PublicAPIAvailabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAPIAvailabilityTests.swift; sourceTree = "<group>"; };
 		14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedComponentDemos.swift; sourceTree = "<group>"; };
 		1FB837FA1E29BB5E8FF65531 /* SKComponentKitExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SKComponentKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedComponentTests.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */,
+				13A978452C56FC2C78E831BF /* PublicAPIAvailabilityTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F2759F5DEA3FF30629E3EB4 /* ImportedComponentTests.swift in Sources */,
+				B906B8CAEDF34CDF2830E72E /* PublicAPIAvailabilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

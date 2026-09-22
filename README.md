@@ -39,7 +39,7 @@ https://github.com/PhanithNY/SKComponentKit.git
 ```
 
 Select the `main` branch and add the **SKComponentKit** library to your app target.
-For this private repository, authenticate with a GitHub account that has access.
+The repository is public; no GitHub authentication is required to fetch the package.
 
 To use it from another Swift package, add the dependency:
 
@@ -58,7 +58,7 @@ Then add the product to the consuming target's dependencies:
 .product(name: "SKComponentKit", package: "SKComponentKit")
 ```
 
-The package currently tracks `main`; versioned releases can be added when components are ready.
+The package currently tracks `main`; versioned releases have not been published yet.
 
 ## Usage
 
@@ -72,7 +72,7 @@ button.onTouchUpInside = { print("Continue tapped") }
 
 Add reusable components under `Sources/SKComponentKit/`, marking types and initializers
 intended for app use as `public`.
-The library primarily contains UIKit and AppKit components. Wrap UIKit implementations
+The library currently contains UIKit components, with room for AppKit components. Wrap UIKit implementations
 in `#if canImport(UIKit)` and AppKit implementations in `#if canImport(AppKit)` so the
 package builds on both platforms. Shared code can remain outside those guards.
 
@@ -110,6 +110,15 @@ xcodebuild -scheme SKComponentKit \
 GitHub Actions builds the library for macOS and the iOS Simulator, plus the UIKit example app,
 on pushes and pull requests, then runs the component and UI tests on an available iPhone simulator.
 Use **Command-U** in the example project to run component and UI tests.
+
+The public API tests use a normal `import SKComponentKit` to instantiate every component
+from a separate module, including subclasses of the extensible controllers and text field.
+Components support programmatic UIKit construction. The package currently ships UIKit
+components for iOS; AppKit components have not been added yet.
+
+The shared `SKNetworkConnectivity.current` helper provides `startMonitor()`,
+`stopMonitor()`, and `isConnectedToInternet` on the main actor. Its status reflects the system
+network path and does not guarantee that a particular server is reachable.
 
 ## Dependencies
 
