@@ -9,6 +9,29 @@ import XCTest
 
 final class CatalogSmokeTests: XCTestCase {
     @MainActor
+    func testTopScrollEdgeDemo() {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launch()
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        search.tap()
+        search.typeText("Top Scroll Edge")
+        app.cells["demo.Top Scroll Edge"].tap()
+        let toggle = app.buttons["Toggle Custom Effect"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: 5))
+        toggle.tap()
+        XCTAssertTrue(toggle.isHittable)
+        toggle.tap()
+        app.scrollViews.firstMatch.swipeUp()
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = "Top scroll edge after scrolling"
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
+        XCTAssertTrue(app.navigationBars["Top Scroll Edge"].exists)
+    }
+
+    @MainActor
     func testImportedButtonAndDialogue() {
         continueAfterFailure = false
         let app = XCUIApplication()

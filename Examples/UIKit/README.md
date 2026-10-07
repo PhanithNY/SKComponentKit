@@ -58,7 +58,7 @@ Dynamic Type support still depends on the component using scalable fonts and fle
 
 ## Manual checks for each component
 
-Run tests with **Command-U** in Xcode. Component tests load all 12 demos at phone and tablet
+Run tests with **Command-U** in Xcode. Component tests load all 13 demos at phone and tablet
 sizes and check layout and lifecycle behavior. UI tests verify catalog search, navigation,
 button callbacks, dialogue dismissal, and preview controls. GitHub Actions runs these checks as well.
 

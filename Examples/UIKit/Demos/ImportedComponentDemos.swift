@@ -19,6 +19,13 @@ enum ImportedComponentDemos {
         demo("Refresh Indicator", "SKRefreshingView animation and tint changes.", "arrow.clockwise", refreshing),
         demo("Zigzag", "SKZigzagView receipt-style shape.", "receipt", zigzag),
         demo("Scroll Container", "SKScrollViewController with keyboard-aware content.", "scroll", { ScrollComponentDemo() }),
+        ComponentDemo(
+            title: "Top Scroll Edge",
+            summary: "Automatic top blur with SKViewController on iOS 27+.",
+            symbolName: "rectangle.topthird.inset.filled",
+            makeViewController: { TopScrollEdgeDemoViewController() },
+            extendsUnderNavigationBar: true
+        ),
         demo("Dialogue", "SKDialogueViewController presentation and dismissal.", "rectangle.on.rectangle", dialogue),
         demo("Loading Overlay", "SKLoadingViewController presentation and dismissal.", "hourglass", loading),
         demo("QR Scanner", "SKQRCodeScannerController; scanning requires a device.", "qrcode.viewfinder", scanner),

@@ -15,6 +15,7 @@ struct ComponentDemo {
     let summary: String
     let symbolName: String
     let makeViewController: @MainActor () -> UIViewController
+    var extendsUnderNavigationBar = false
 }
 
 @MainActor

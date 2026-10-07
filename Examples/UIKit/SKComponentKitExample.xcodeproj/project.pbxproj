@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3589EA0142C3FBA92DAF1618 /* TopScrollEdgeEffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABEEE47DBE75A4322841F3 /* TopScrollEdgeEffectTests.swift */; };
 		64EBFEA961D50F4CEB6996A6 /* ImportedComponentDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */; };
 		6F2759F5DEA3FF30629E3EB4 /* ImportedComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */; };
 		7068667FEF6B362688049186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BBCB3E3B70D87E0435237 /* AppDelegate.swift */; };
@@ -15,6 +16,7 @@
 		B906B8CAEDF34CDF2830E72E /* PublicAPIAvailabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A978452C56FC2C78E831BF /* PublicAPIAvailabilityTests.swift */; };
 		C044CA99EFF7FF55A11CC04F /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E081A83AF9498F92017B9 /* PlaygroundViewController.swift */; };
 		C0F7539995AEC93D061C3497 /* DemoHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B9302967A5E0B4FB72B4A /* DemoHostViewController.swift */; };
+		C5EBEE875013FD952691DF79 /* TopScrollEdgeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF99D7FC8F32C131F79AFFD /* TopScrollEdgeDemoViewController.swift */; };
 		DB28433363BEDD2466FD4C7E /* ComponentDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A386C0B7891E992A5A23A /* ComponentDemo.swift */; };
 		DDF8E3BCD6BB23D78111BA19 /* EasyAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = B530386C2CA438BA88537016 /* EasyAnchor */; };
 		E60E5A9EB600EB3B3BD12625 /* SKComponentKit in Frameworks */ = {isa = PBXBuildFile; productRef = E04ADA8BF2C491A8885523F8 /* SKComponentKit */; };
@@ -46,10 +48,12 @@
 		1FB837FA1E29BB5E8FF65531 /* SKComponentKitExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SKComponentKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedComponentTests.swift; sourceTree = "<group>"; };
 		27272A0A1FBC5D32662164AF /* SKComponentKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SKComponentKit; path = ../..; sourceTree = SOURCE_ROOT; };
+		4FABEEE47DBE75A4322841F3 /* TopScrollEdgeEffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScrollEdgeEffectTests.swift; sourceTree = "<group>"; };
 		7D0D432DE7BAE535D48B530B /* CatalogSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSmokeTests.swift; sourceTree = "<group>"; };
 		89BFEBD3D73B1F6EBFAC65D2 /* SKComponentKitExampleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SKComponentKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		937B9302967A5E0B4FB72B4A /* DemoHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHostViewController.swift; sourceTree = "<group>"; };
 		A8FE6B594B7E429120890173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AAF99D7FC8F32C131F79AFFD /* TopScrollEdgeDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScrollEdgeDemoViewController.swift; sourceTree = "<group>"; };
 		B6C76E3EFB9B8A46DB9EF9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA9BBCB3E3B70D87E0435237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C52A386C0B7891E992A5A23A /* ComponentDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDemo.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			children = (
 				14436CEE15024EA02B12E3D2 /* ImportedComponentDemos.swift */,
 				EA6E081A83AF9498F92017B9 /* PlaygroundViewController.swift */,
+				AAF99D7FC8F32C131F79AFFD /* TopScrollEdgeDemoViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			children = (
 				25D73B464BF12CAD4C2667D4 /* ImportedComponentTests.swift */,
 				13A978452C56FC2C78E831BF /* PublicAPIAvailabilityTests.swift */,
+				4FABEEE47DBE75A4322841F3 /* TopScrollEdgeEffectTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				64EBFEA961D50F4CEB6996A6 /* ImportedComponentDemos.swift in Sources */,
 				C044CA99EFF7FF55A11CC04F /* PlaygroundViewController.swift in Sources */,
 				FF9B5019DF27CE835FE44870 /* SceneDelegate.swift in Sources */,
+				C5EBEE875013FD952691DF79 /* TopScrollEdgeDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +301,7 @@
 			files = (
 				6F2759F5DEA3FF30629E3EB4 /* ImportedComponentTests.swift in Sources */,
 				B906B8CAEDF34CDF2830E72E /* PublicAPIAvailabilityTests.swift in Sources */,
+				3589EA0142C3FBA92DAF1618 /* TopScrollEdgeEffectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

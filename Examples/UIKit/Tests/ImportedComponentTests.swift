@@ -14,7 +14,7 @@ import XCTest
 final class ImportedComponentTests: XCTestCase {
     @MainActor
     func testEveryDemoLoadsAndLaysOutAtPhoneAndTabletSizes() {
-        XCTAssertEqual(ImportedComponentDemos.all.count, 12)
+        XCTAssertEqual(ImportedComponentDemos.all.count, 13)
         for demo in ImportedComponentDemos.all {
             let host = DemoHostViewController(demo: demo)
             host.loadViewIfNeeded()

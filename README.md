@@ -16,6 +16,7 @@ The package also builds on macOS 26; the imported UIKit components are available
 | `SKRefreshingView` | Animated refresh indicator |
 | `SKZigzagView` | Receipt-style zigzag shape |
 | `SKScrollViewController` / `SKScrollView` | Scroll content and keyboard handling |
+| `SKViewController` / `SKTopScrollEdgeEffect` | Automatic top scroll-edge blur on iOS 27+ |
 | `SKDialogueViewController` | Custom modal dialogue container |
 | `SKCustomIntensityVisualEffectView` | Adjustable blur intensity |
 | `SKLoadingViewController` | Modal loading indicator |
@@ -76,6 +77,51 @@ The library currently contains UIKit components, with room for AppKit components
 in `#if canImport(UIKit)` and AppKit implementations in `#if canImport(AppKit)` so the
 package builds on both platforms. Shared code can remain outside those guards.
 
+### Automatic top scroll-edge effect
+
+Change your app's shared base controller to inherit from `SKViewController`:
+
+```swift
+import SKComponentKit
+
+class AppViewController: SKViewController {
+    // Keep app-specific localization and status-bar behavior here.
+}
+```
+
+Screens inheriting from it receive the effect automatically after layout. It selects a root
+`UIScrollView` (including tables and collections), or the first visible direct scroll-view child
+whose frame or content fills the available height. `SKScrollViewController` already inherits
+this behavior. Importing the library alone does not modify unrelated UIKit controllers.
+
+The custom blur activates on **iOS 27+ when built with Xcode 26+ (Swift 6.2+)**. Older OS
+versions and older compiler builds keep their existing appearance. The package's iOS 15 minimum
+is unchanged. The effect uses the existing BlurUIKit dependency, follows safe-area changes,
+stays fixed while a root scroll view scrolls, and yields to UIKit when the navigation bar's
+`prefersLargeTitles` is true. Content must extend beneath the top safe area to scroll behind
+the blur; for `SKScrollViewController`, override `ignoredSafeArea` to return `true` if desired.
+
+For a nested scroll view or multiple scroll views, override `scrollViewForTopEdgeEffect`.
+To opt out, override `preferredCustomTopEdgeEffectOverSystemProvidedComponent` to return `false`.
+Call `updateTopScrollEdgeEffect()` after changing either preference dynamically. Always call
+`super` when overriding lifecycle methods.
+
+If your controller must inherit from another class, such as `UITableViewController`, retain
+an `SKTopScrollEdgeEffect` and forward layout to it:
+
+```swift
+private let topEdgeEffect = SKTopScrollEdgeEffect()
+
+override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    topEdgeEffect.installIfNeeded(on: tableView, in: self)
+}
+```
+
+Installation also refreshes layout and is safe to repeat. Call `remove()` to stop using the
+helper; it restores the original system edge styles and top-edge visibility. Use one helper
+per controller and scroll view. The **Top Scroll Edge** example demonstrates adoption and toggling.
+
 ## UIKit example app
 
 Open [`Examples/UIKit/SKComponentKitExample.xcodeproj`](Examples/UIKit/SKComponentKitExample.xcodeproj),
@@ -84,7 +130,7 @@ The project uses the package from this checkout, so local changes are available 
 on the next build. No separate package release or XcodeGen installation is needed to run it.
 
 The app includes a searchable component catalog and a reusable demo host with light/dark
-appearance and Dynamic Type controls, 12 component demos, and a UIKit playground.
+appearance and Dynamic Type controls, 13 component demos, and a UIKit playground.
 See the [example guide](Examples/UIKit/README.md) to register a demo.
 
 This iOS example covers UIKit components. AppKit components require a separate native macOS

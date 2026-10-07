@@ -10,10 +10,12 @@ import UIKit
 /// Hosts any UIKit demo with appearance and Dynamic Type overrides scoped to this screen.
 final class DemoHostViewController: UIViewController {
     private let content: UIViewController
+    private let extendsUnderNavigationBar: Bool
     private var selectedTextSize: UIContentSizeCategory?
 
     init(demo: ComponentDemo) {
         content = demo.makeViewController()
+        extendsUnderNavigationBar = demo.extendsUnderNavigationBar
         super.init(nibName: nil, bundle: nil)
         title = demo.title
     }
@@ -32,7 +34,7 @@ final class DemoHostViewController: UIViewController {
         NSLayoutConstraint.activate([
             content.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             content.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            content.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            content.view.topAnchor.constraint(equalTo: extendsUnderNavigationBar ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor),
             content.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
         content.didMove(toParent: self)

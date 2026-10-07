@@ -26,12 +26,13 @@ final class PublicAPIAvailabilityTests: XCTestCase {
         ]
         XCTAssertEqual(views.count, 9)
         let controllers: [UIViewController] = [
+            SKViewController(),
             SKScrollViewController(),
             SKDialogueViewController(),
             SKLoadingViewController(),
             SKQRCodeScannerController(),
         ]
-        XCTAssertEqual(controllers.count, 4)
+        XCTAssertEqual(controllers.count, 5)
         for controller in controllers {
             controller.loadViewIfNeeded()
             XCTAssertNotNil(controller.viewIfLoaded)
@@ -40,6 +41,11 @@ final class PublicAPIAvailabilityTests: XCTestCase {
 
     @MainActor
     func testClientCanSubclassExtensibleComponents() {
+        XCTAssertFalse(ClientViewController().preferredCustomTopEdgeEffectOverSystemProvidedComponent)
+        let effect = SKTopScrollEdgeEffect()
+        effect.installIfNeeded(in: ClientViewController())
+        effect.updateLayout()
+        effect.remove()
         XCTAssertTrue(ClientScrollController().allowedKeyboardObservation)
         XCTAssertEqual(ClientDialogueController().cornerRadius, 20)
         XCTAssertFalse(ClientScannerController().canProcessResult)
@@ -61,6 +67,10 @@ final class PublicAPIAvailabilityTests: XCTestCase {
         monitor.stopMonitor()
         XCTAssertFalse(monitor.isConnectedToInternet)
     }
+}
+
+private final class ClientViewController: SKViewController {
+    override var preferredCustomTopEdgeEffectOverSystemProvidedComponent: Bool { false }
 }
 
 private final class ClientScrollController: SKScrollViewController {

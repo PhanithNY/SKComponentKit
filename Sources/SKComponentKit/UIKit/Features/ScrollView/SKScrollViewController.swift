@@ -9,7 +9,9 @@
 import UIKit
 import EasyAnchor
 
-open class SKScrollViewController: UIViewController {
+open class SKScrollViewController: SKViewController {
+
+  open override var scrollViewForTopEdgeEffect: UIScrollView? { scrollView }
 
   /// SKCallback when keyboard about to show
   public var keyboardWillShowHandler: ((CGFloat) -> Swift.Void)?
