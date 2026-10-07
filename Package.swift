@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/PhanithNY/EasyAnchor.git",
-            branch: "master"
+            revision: "fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc"
         ),
         .package(url: "https://github.com/TimOliver/BlurUIKit.git", from: "1.5.0"),
     ],

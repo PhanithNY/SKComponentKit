@@ -31,7 +31,7 @@ Expose the constructor and any nested configuration types needed by clients. A p
 with an internal initializer is not constructible from another app. Keep extensible controllers
 and intended override points `open`; do not broaden access for unrelated internals.
 
-EasyAnchor tracks `master`; BlurUIKit is an iOS-only dependency starting at 1.5.0. Preserve the
+EasyAnchor is pinned to revision `fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc`; BlurUIKit is an iOS-only dependency starting at 1.5.0. Preserve the
 conditional linkage so macOS builds do not compile UIKit-only dependency code. Check resolved
 revisions when diagnosing behavior; avoid unrelated package upgrades and lockfile churn.
 
