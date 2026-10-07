@@ -174,12 +174,15 @@ network path and does not guarantee that a particular server is reachable.
 
 ## Dependencies
 
-- [EasyAnchor](https://github.com/PhanithNY/EasyAnchor) tracks the `master` branch on iOS and macOS.
+- [EasyAnchor](https://github.com/PhanithNY/EasyAnchor) is pinned to revision
+  `fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc` on iOS and macOS.
 - [BlurUIKit](https://github.com/TimOliver/BlurUIKit) uses compatible releases starting at `1.5.0`
   and is linked on iOS only. Its UIKit implementation is not compiled for macOS.
 
-SPM resolves these automatically. Committed lockfiles record the resolved revisions; use Xcode's
-package update command to pick up new EasyAnchor `master` commits. PHExtensions is not required.
+SPM resolves these automatically. Committed lockfiles record the resolved revisions.
+Update the EasyAnchor revision in `Package.swift` deliberately, then regenerate the lockfiles.
+Clients that depend directly on EasyAnchor must use the same revision requirement; SwiftPM
+cannot combine a branch requirement with a commit requirement for the same package. PHExtensions is not required.
 
 EasyAnchor's `layout { ... }`, `config { ... }`, and fluent anchor helpers are used throughout
 the imported layouts. Native constraints remain where a mutable constraint reference is needed;

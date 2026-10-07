@@ -21,6 +21,8 @@ the repository's example intentionally uses a local package for library developm
 Import `SKComponentKit` to use the components. UIKit components require an iOS target even
 though the package also builds on macOS. If the client directly calls EasyAnchor APIs, configure
 and import EasyAnchor as the app's own dependency rather than relying on a transitive import.
+Use the same EasyAnchor revision as this package (`fbc2a3b5790a1a857563c0fb7d54ff3bb36cdacc`);
+SwiftPM rejects mixed branch and revision requirements for the same dependency.
 
 Use `README.md` for the current component catalog and inspect source for exact signatures.
 For PHComponents migration, read `MIGRATION.md`; the module and exported type names changed.
