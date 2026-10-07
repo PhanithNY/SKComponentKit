@@ -1,0 +1,4 @@
+interface:
+  display_name: "SKComponentKit"
+  short_description: "Build and integrate SKComponentKit components"
+  default_prompt: "Use $skcomponentkit to implement or integrate the requested SKComponentKit feature."

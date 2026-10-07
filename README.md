@@ -138,6 +138,12 @@ example app, which is not included yet.
 
 ## Development
 
+Agent guidance lives in [`skills/skcomponentkit/SKILL.md`](skills/skcomponentkit/SKILL.md),
+with focused references for library development and app integration. `AGENTS.md` directs
+repository agents to it. To use it from other app projects, install the `skills/skcomponentkit`
+folder in your agent's skill directory (Codex: `$CODEX_HOME/skills`, default `~/.codex/skills`)
+and invoke `$skcomponentkit`.
+
 Open `Package.swift` in Xcode, or build the library from the terminal:
 
 ```sh
